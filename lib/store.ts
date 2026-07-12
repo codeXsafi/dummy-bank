@@ -22,3 +22,15 @@ export const useAuthStore = create<AuthState>((set) => ({
   login: (token, role, email) => set({ token, role, email }),
   logout: () => set({ token: null, role: null, email: null }),
 }));
+
+interface PageTitleState {
+  title: string;
+  setTitle: (title: string) => void;
+}
+
+// Holds the current page title so Header can render it — pages push their
+// own title in via usePageTitle() instead of Header hardcoding one.
+export const usePageTitleStore = create<PageTitleState>((set) => ({
+  title: "",
+  setTitle: (title) => set({ title }),
+}));

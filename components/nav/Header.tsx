@@ -4,10 +4,10 @@ import { Bell, Wallet } from "lucide-react";
 import Link from "next/link";
 import { Avatar } from "@/components/ui/Avatar";
 import { ThemeSwitcher } from "@/components/ui/ThemeSwitcher";
-import { useAuthStore } from "@/lib/store";
+import { usePageTitleStore } from "@/lib/store";
 
 export function Header() {
-  const email = useAuthStore((s) => s.email);
+  const title = usePageTitleStore((s) => s.title);
 
   return (
     <header className="flex items-center justify-between px-4 py-3  border-b border-[#D7DDE9]">
@@ -17,9 +17,9 @@ export function Header() {
         </div>
         Dummy Bank
       </div>
-      <div className="items-center gap-3 hidden md:block font-semibold text-lg text-text">
-        Dashboard
-      </div>
+      <h1 className="items-center gap-3 hidden md:block font-semibold text-lg text-text pageTitle">
+        {title}
+      </h1>
 
       <div className="ml-auto flex items-center gap-3">
         <ThemeSwitcher />
@@ -31,7 +31,7 @@ export function Header() {
           <Bell size={18} />
         </button>
         <Link href="/settings" aria-label="Account settings">
-          <Avatar email={email} />
+          <Avatar />
         </Link>
       </div>
     </header>
