@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Wallet } from "lucide-react";
 import { ReactNode } from "react";
 import { LoginMarketingPanel } from "@/components/login/LoginMarketingPanel";
 import { StepProgress } from "@/components/login/StepProgress";
@@ -27,6 +27,13 @@ export function LoginShell({ step, onBack, children }: LoginShellProps) {
         </div>
 
         <div className="w-full max-w-md">
+          <div className="relative items-center gap-2 text-xl font-semibold font-serif mb-6 flex lg:hidden">
+            <div className="rounded-full bg-primary-light w-9 h-9 flex items-center justify-center p-1">
+              <Wallet size={22} className="text-white" />
+            </div>
+            Dummy Bank
+          </div>
+
           <div className="mb-6 flex items-center gap-3">
             {stepIndex > 1 && (
               <button
