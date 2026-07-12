@@ -58,7 +58,7 @@ export function Sidebar() {
 
       <div className="mt-auto flex flex-col start  gap-3 pt-4 pb-4 border-t border-[#D7DDE9]">
         <div className="flex flex-start items-center gap-3 px-4">
-          <Avatar email={email} />
+          <Avatar />
           <div className="min-w-0 flex-1">
             <p className="truncate text-sm font-medium text-gray-700">
               {email}

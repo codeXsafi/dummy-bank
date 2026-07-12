@@ -44,7 +44,6 @@ export default function SettingsPage() {
       <Card className="max-w-md">
         <div className="flex items-center gap-3">
           <Avatar
-            email={email}
             size="md"
             className="bg-accent/20 rounded-xl text-primary-foreground"
           />
